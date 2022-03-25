@@ -1,0 +1,28 @@
+﻿@using WebApplication3.Models
+@model RegisterModel
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <p>Login</p>
+    @Html.TextBoxFor(m => m.Name, "Name");
+    @Html.ValidationMessageFor(m => m.Name, "");
+    <br />
+    <p>Email</p>
+    @Html.TextBoxFor(m => m.Email, "Email");
+    @Html.ValidationMessageFor(m => m.Email, "");
+    <br />
+    <p>Password</p>
+    @Html.PasswordFor(m => m.Password, "Password");
+    @Html.ValidationMessageFor(m => m.Password, "");
+    <br />
+    <p>Confirm password</p>
+    @Html.PasswordFor(m => m.ConfirmPassword, "ConfirmPassword");
+    @Html.ValidationMessageFor(m => m.ConfirmPassword, "");
+    <br />
+    <p>Age</p>
+    @Html.TextBoxFor(m => m.age, "age", new { @type = "number", @Value = 0, @style = "width: 40px" });
+    @Html.ValidationMessageFor(m => m.age, "");
+    <br />
+    <br />
+    <button type="submit">Submit</button>
+}
